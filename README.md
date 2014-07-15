@@ -1,6 +1,6 @@
-force_torque_tools
+force_torque_tools for PR2
 ======================
- 
+Modified from KTH's package
 
 Overview
 ---------------------------------------------
