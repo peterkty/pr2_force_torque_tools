@@ -478,10 +478,8 @@ private:
 
 int main(int argc, char **argv)
 {
-ROS_INFO("x1");
 	ros::init (argc, argv, "ft_calib_node");
 	ros::NodeHandle nh;
-ROS_INFO("x1");
 	FTCalibNode ft_calib_node;
 	if(!ft_calib_node.getROSParameters())
 	{
@@ -489,14 +487,11 @@ ROS_INFO("x1");
 		ROS_ERROR("Error getting ROS parameters");
 
 	}
-ROS_INFO("x1");
 	ft_calib_node.init();
-ROS_INFO("x1");
 	/// main loop
 	double loop_rate_;
 	ft_calib_node.n_.param("loop_rate", loop_rate_, 650.0);
 	ros::Rate loop_rate(loop_rate_); // Hz
-ROS_INFO("x1");
 	// waiting time after end of each pose to take F/T measurements
 	double wait_time;
 	ft_calib_node.n_.param("wait_time", wait_time, 4.0);
@@ -509,7 +504,6 @@ ROS_INFO("x1");
 	while (ft_calib_node.n_.ok() && !ft_calib_node.finished())
 	{
 		
-		ROS_INFO("x3");
 		//		Move the arm, then calibrate sensor
 		if(!ret)
 		{

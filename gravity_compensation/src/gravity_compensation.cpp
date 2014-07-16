@@ -68,12 +68,12 @@ void GravityCompensation::Zero(const geometry_msgs::WrenchStamped &ft_raw,
 
 
 bool GravityCompensation::Compensate(const geometry_msgs::WrenchStamped &ft_zeroed,
-                                     const sensor_msgs::Imu &gravity,
+                                     const pr2_msgs::AccelerometerState &gravity,
                                      geometry_msgs::WrenchStamped &ft_compensated)
 {
 
     geometry_msgs::Vector3Stamped g;
-    g.vector = gravity.linear_acceleration;
+    g.vector = gravity.samples[0];
     g.header = gravity.header;
     g.header.stamp = ros::Time();
 

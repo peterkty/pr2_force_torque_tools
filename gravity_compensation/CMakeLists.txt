@@ -14,6 +14,11 @@ catkin_package(
 )
 
 include_directories(
+  /opt/ros/groovy/stacks/pr2_common/pr2_msgs/msg_gen/cpp/include
+)
+
+
+include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}

@@ -36,6 +36,7 @@
 #include <gravity_compensation/gravity_compensation.h>
 #include <gravity_compensation/gravity_compensation_params.h>
 #include <sensor_msgs/Imu.h>
+#include <pr2_msgs/AccelerometerState.h>
 #include <eigen3/Eigen/Core>
 #include <eigen3/Eigen/Geometry>
 #include <tf_conversions/tf_eigen.h>
@@ -233,7 +234,7 @@ public:
 		return true;
 	}
 
-	void topicCallback_imu(const sensor_msgs::Imu::ConstPtr &msg)
+	void topicCallback_imu(const pr2_msgs::AccelerometerState::ConstPtr &msg)
 	{
 		m_imu = *msg;
 		m_received_imu = true;
@@ -291,7 +292,7 @@ private:
 
 	GravityCompensationParams *m_g_comp_params;
 	GravityCompensation *m_g_comp;
-	sensor_msgs::Imu m_imu;
+	pr2_msgs::AccelerometerState m_imu;
 	bool m_received_imu;
 	double m_gripper_com_broadcast_frequency;
 

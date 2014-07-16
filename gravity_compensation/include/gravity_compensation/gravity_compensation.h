@@ -40,7 +40,7 @@
 #include <tf/transform_datatypes.h>
 #include <geometry_msgs/WrenchStamped.h>
 #include <sensor_msgs/Imu.h>
-
+#include <pr2_msgs/AccelerometerState.h>
 
 class GravityCompensation
 {
@@ -58,7 +58,7 @@ public:
     // Assumes that the gripper has fixed mass and COM
     // relative to F/T sensor.
     bool Compensate(const geometry_msgs::WrenchStamped &ft_zeroed,
-                    const sensor_msgs::Imu &gravity,
+                    const pr2_msgs::AccelerometerState &gravity,
                     geometry_msgs::WrenchStamped &ft_compensated);
 
 private:
